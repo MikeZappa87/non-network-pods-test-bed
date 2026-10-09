@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nonnetwork
+spec:
+  defaultNetwork: None
+  dnsPolicy: None
+  enableServiceLinks: false
+  automountServiceAccountToken: false
+  containers:
+    - name: test
+      image: busybox:1.37
+      command: ["sh", "-c", "sleep 3600"]
